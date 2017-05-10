@@ -91,7 +91,7 @@ $_GET['liked']=false;
 			<div class="contact-wthree">
 				<a href="#"><p class="terms">terms & conditions ></p></a>
 				<form action="http://login.com/emailSave.php" method="post">
-					<h1 class="heading"><?php echo $GLOBALS['title']; ?></h1>
+					<h1 class="heading"  style='color: <?php echo $GLOBALS['font_color_1'];?>' ><?php echo $GLOBALS['title']; ?></h1>
 					<?php
                
                
