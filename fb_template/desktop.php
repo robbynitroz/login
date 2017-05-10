@@ -122,7 +122,7 @@ $_GET['liked']=false;
 						<div class="form-w3step1">
 							<div class="social-wrap c">
 								<button type='button' class="facebook">
-									<a style='color: #ffffff;'
+									<a style='color: <?php echo $GLOBALS['font_color_2'];?>;'
 									   href="http://fbdev.guestcompass.nl/index.php?macaddress=<?php echo $macaddress; ?>&nasip=<?php echo $nasip; ?>&hotel_id=<?php echo $hotel_id; ?>&url=<?php echo $url; ?>">
 										Connect using Facebook
 									</a>
