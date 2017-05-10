@@ -91,11 +91,12 @@ $_GET['liked']=false;
 			<div class="contact-wthree">
 				<a href="#"><p class="terms">terms & conditions ></p></a>
 				<form action="http://login.com/emailSave.php" method="post">
-					<h1 class="heading"  style='color: <?php echo $GLOBALS['font_color_1'];?>' ><?php echo $GLOBALS['title']; ?></h1>
+					<h1 class="heading"
+						style='color: <?php echo $GLOBALS['font_color_1'];?>;
+								font-size: calc(<?php echo $GLOBALS['font_size_1']; ?>px * 2.0833333);' >
+						<?php echo $GLOBALS['title']; ?>
+					</h1>
 					<?php
-               
-               
-               
 						if ($_GET['liked'] == 'false'):
 					?>
 						<div class="form-w3step1">
