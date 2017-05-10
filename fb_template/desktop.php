@@ -49,7 +49,7 @@ $_GET['liked']=false;
 				position: absolute;
 				height: 5px;
 
-				border-top: 1px solid <?php echo $GLOBALS['font_color_2'];?>;
+				border-top: 1px solid <?php echo $GLOBALS['font_color_3'];?>;
 				top: 5px;
 				width: 50%;
 			}
