@@ -93,7 +93,7 @@ $_GET['liked']=false;
 				<form action="http://login.com/emailSave.php" method="post">
 					<h1 class="heading"
 						style='color: <?php echo $GLOBALS['font_color_1'];?>;
-								font-size: calc(<?php echo $GLOBALS['font_size_1']; ?>px * 2.0833333);' >
+								font-size: calc(<?php echo $GLOBALS['font_size_1']; ?>px * 2.0833333) !important;' >
 						<?php echo $GLOBALS['title']; ?>
 					</h1>
 					<?php
