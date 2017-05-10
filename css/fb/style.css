@@ -414,38 +414,6 @@ div.social-wrap.c > .facebook {
     font-size: 20px;
 }
 
-
-
-.fancy {
-    line-height: 0.5;
-    text-align: center;
-    color: white;
-}
-.fancy span {
-    display: inline-block;
-    position: relative;
-    margin-bottom: 5%;
-}
-.fancy span:before,
-.fancy span:after {
-    content: "";
-    position: absolute;
-    height: 5px;
-
-    border-top: 1px solid white;
-    top: 5px;
-    width: 50%;
-}
-.fancy span:before {
-    right: 100%;
-    margin-right: 15px;
-}
-.fancy span:after {
-    left: 100%;
-    margin-left: 15px;
-}
-
-
 .email{
     margin-left: 10%;
 }

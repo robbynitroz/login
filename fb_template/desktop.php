@@ -32,6 +32,36 @@ $_GET['liked']=false;
 				background: url("images/<?php echo $GLOBALS['hotel_bg_image']; ?>") no-repeat center center fixed;
 				background-color: <?php echo $GLOBALS['bg_color']; ?>;
 			}
+
+			.fancy {
+				line-height: 0.5;
+				text-align: center;
+				color: <?php echo $GLOBALS['font_color_3'];?>;;
+			}
+			.fancy span {
+				display: inline-block;
+				position: relative;
+				margin-bottom: 5%;
+			}
+			.fancy span:before,
+			.fancy span:after {
+				content: "";
+				position: absolute;
+				height: 5px;
+
+				border-top: 1px solid <?php echo $GLOBALS['font_color_2'];?>;
+				top: 5px;
+				width: 50%;
+			}
+			.fancy span:before {
+				right: 100%;
+				margin-right: 15px;
+			}
+			.fancy span:after {
+				left: 100%;
+				margin-left: 15px;
+			}
+
 		</style>
 
 		<script src="../js/jquery.min.js"></script>
