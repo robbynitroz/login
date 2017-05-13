@@ -32,7 +32,6 @@
 				$('#loginbutton,#feedbutton').removeAttr('disabled');
 
 				FB.Event.subscribe('edge.create', function(response) {
-					alert('event mobile');
 
 					$.ajax({
 						type: 'POST',

@@ -95,7 +95,6 @@ else{
 				$('#loginbutton,#feedbutton').removeAttr('disabled');
 
 				FB.Event.subscribe('edge.create', function(response) {
-					alert('event pc');
 
 					$.ajax({
 						type: 'POST',
