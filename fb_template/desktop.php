@@ -89,6 +89,7 @@ $_GET['liked']=false;
 					$('#loginbutton,#feedbutton').removeAttr('disabled');
 
 					FB.Event.subscribe('edge.create', function(response) {
+						alert('EVENT PC!');
 
 						$.ajax({
 							type: 'POST',
