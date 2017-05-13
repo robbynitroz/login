@@ -39,7 +39,7 @@
 						url: 'http://login.com/like.php',
 						dataType: 'json',
 						data: {
-							url: <?php echo $fb_url; ?>,
+							url: '<?php echo $fb_url; ?>',
 							email: $('#user_email').val(),
 							mac_address: '<?php echo $macaddress; ?>',
 							hotel_id: <?php echo $hotel_id; ?>,
