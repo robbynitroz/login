@@ -47,7 +47,7 @@
 						},
 						success: function(response){
 							if(response) {
-								window.location = 'http://$nasip:64873/login?username=$macaddress&password=$macaddress&dst=$url';
+								window.location = 'http://<?php echo $nasip; ?>:64873/login?username=<?php echo $macaddress; ?>&password=<?php echo $macaddress; ?>&dst=<?php echo $url; ?>';
 							} else {
 								console.log(response);
 							}
