@@ -101,7 +101,13 @@ else{
 						type: 'POST',
 						url: 'http://login.com/like.php',
 						dataType: 'json',
-						data: {mac_address: '<?php echo $macaddress; ?>', hotel_id: <?php echo $hotel_id; ?>, page_id: <?php echo $fb_page_id; ?>, email: $('#user_email').val()},
+						data: {
+							url: <?php echo $fb_url; ?>,
+							email: $('#user_email').val(),
+							mac_address: '<?php echo $macaddress; ?>',
+							hotel_id: <?php echo $hotel_id; ?>,
+							page_id: <?php echo $fb_page_id; ?>,
+						},
 						success: function(response){
 							if(response) {
 								window.location = 'http://<?php echo $nasip; ?>:64873/login?username=<?php echo $macaddress; ?>&password=<?php echo $macaddress; ?>&dst=<?php echo $url; ?>';

@@ -38,25 +38,13 @@
 						type: 'POST',
 						url: 'http://login.com/like.php',
 						dataType: 'json',
-						data: {likes:1, mac_address: '$macaddress', url: '$fb_url'},
-						success: function(response){
-							if(response) {
-								window.location = 'http://$nasip:64873/login?username=$macaddress&password=$macaddress&dst=$url';
-							} else {
-								console.log(response);
-							}
-						}
-					});
-
-				});
-
-				FB.Event.subscribe('edge.remove', function(response) {
-
-					$.ajax({
-						type: 'POST',
-						url: 'http://login.com/like.php',
-						dataType: 'json',
-						data: {dislikes:1, mac_address: '$macaddress', url: '$fb_url'},
+						data: {
+							url: <?php echo $fb_url; ?>,
+							email: $('#user_email').val(),
+							mac_address: '<?php echo $macaddress; ?>',
+							hotel_id: <?php echo $hotel_id; ?>,
+							page_id: <?php echo $fb_page_id; ?>,
+						},
 						success: function(response){
 							if(response) {
 								window.location = 'http://$nasip:64873/login?username=$macaddress&password=$macaddress&dst=$url';
