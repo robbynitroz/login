@@ -149,7 +149,7 @@ if (isset($accessToken)) {
 
     $result = $conn->query($query);
     $myrow = $result->fetch_array();
-
+    $facebook_page_id = $myrow['facebook_page_id'];
 
     // Check have this user liked
     $query = "SELECT * FROM facebook where email='$user_email' and page_id='$facebook_page_id'";
