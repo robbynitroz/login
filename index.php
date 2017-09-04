@@ -1113,6 +1113,5 @@ if ($GLOBALS['template_name'] == 'Facebook template') {
     $conn->close();
 }
 
-
 ?>
 
