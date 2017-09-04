@@ -1113,6 +1113,6 @@ if ($GLOBALS['template_name'] == 'Facebook template') {
     $conn->close();
 }
 
-
+//random comment
 ?>
 
