@@ -64,8 +64,6 @@ $commands = array(
     'cd /var/www/login',
 	'sudo git stash',
 	'sudo git pull',
-	//This is right way
-
 	'sudo git stash pop',
 	'sudo git pull',
 	'sudo git status',
@@ -84,7 +82,6 @@ foreach($commands AS $command){
     // Output
     $output .= "<span style=\"color: #6BE234;\">\$</span> <span style=\"color: #729FCF;\">{$command}\n</span>";
     $output .= htmlentities(trim($tmp)) . "\n";
-
     $log  .= "\$ $command\n".trim($tmp)."\n";
 }
 
