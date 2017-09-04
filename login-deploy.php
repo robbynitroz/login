@@ -80,6 +80,7 @@ $output = "\n";
 
 $log = "####### ".date('Y-m-d H:i:s'). " #######\n";
 
+
 foreach($commands AS $command){
     // Run it
     $tmp = shell_exec("$command 2>&1");
