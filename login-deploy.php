@@ -49,7 +49,6 @@ if ($_GET['secretword']==yes1234567899877451wwdsfsdf549fds){
     $allowed = true;
 }
 
-
 if (!$allowed) {
 	header('HTTP/1.1 403 Forbidden');
  	echo "<span style=\"color: #ff0000\">Sorry, no hamster - better convince your parents!</span>\n";
