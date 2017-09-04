@@ -45,7 +45,7 @@ foreach ($allowed_ips as $allow) {
 }*/
 $allowed=false;
 
-if (isset($_GET['secretword'])==='yes1234567899877451wwdsfsdf549fds'){
+if (isset($_GET['secretword'])=='yes1234567899877451wwdsfsdf549fds'){
     $allowed = true;
 }
 
