@@ -22,7 +22,7 @@ echo <<<EOT
 
 
 EOT;
-
+var_dump(shell_exec('whoami'));
 // Check whether client is allowed to trigger an update
 
 /*$allowed_ips = array(
