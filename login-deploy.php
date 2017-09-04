@@ -22,7 +22,7 @@ echo <<<EOT
 
 
 EOT;
-var_dump(shell_exec('whoami'));
+
 // Check whether client is allowed to trigger an update
 
 /*$allowed_ips = array(
@@ -65,14 +65,14 @@ $commands = array(
 	'echo $PWD',
 	'whoami',
     'cd /var/www/login',
-	'sudo git stash',
-	'sudo git pull',
-	'sudo git stash pop',
-	'sudo git pull',
-	'sudo git status',
-	'sudo git submodule sync',
-	'sudo git submodule update',
-	'sudo git submodule status',
+	//'git stash',
+	'git pull',
+	//'git stash pop',
+	'git pull',
+	//'git status',
+	//'sudo git submodule sync',
+	//'sudo git submodule update',
+	//'sudo git submodule status',
 );
 
 $output = "\n";
