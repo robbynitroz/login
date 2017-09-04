@@ -63,14 +63,13 @@ $commands = array(
 	'whoami',
     'cd /var/www/login',
 	'sudo git stash',
-	'sudo git pull origin master',
+	'sudo git pull',
 	'sudo git stash pop',
 	'sudo git pull',
 	'sudo git status',
 	'sudo git submodule sync',
 	'sudo git submodule update',
 	'sudo git submodule status',
-    'test -e /usr/share/update-notifier/notify-reboot-required && echo "system restart required"',
 );
 
 $output = "\n";
