@@ -27,6 +27,8 @@ elseif ($GLOBALS['template_name'] == 'Question template') {
 }
 elseif ($GLOBALS['template_name'] == 'Email template'){
     include 'email.php';
+}elseif ($GLOBALS['template_name'] == 'Login-FB template'){
+    include 'login_fb.php';
 }
 ?>
 

@@ -1,6 +1,12 @@
 <?php
-error_reporting(0);
 
+
+if (isset($_GET['data'])) {
+error_reporting(1);
+
+
+
+$data=json_decode(urldecode($_GET['data']), 'assoc');
 
 /*
  * MySQL connection
@@ -22,12 +28,13 @@ if ($conn->connect_error) {
 
 
 
-if (isset($_POST['page_id'])) {
+    $mac_address = $data['mac'];
+    $hotel_id    = $data['hotelid'];
+    $page_id     = $data['fb-id'];
+    $email       = $data['email'];
+    $url       = $data['url'];
+    $ip       = $data['ip'];
 
-    $mac_address = $_POST['mac_address'];
-    $hotel_id    = $_POST['hotel_id'];
-    $page_id     = $_POST['page_id'];
-    $email       = urldecode($_POST['email']);
 
 
 //Security check
@@ -43,17 +50,27 @@ if (isset($_POST['page_id'])) {
 
     $result = $conn->query($query);
 
-
     // Such user already exists
     if ($result->num_rows == 0) {
 
+    //time
+
+        $time= date("Y-m-d H:i:s");
         $record = $row = $result->fetch_assoc();
 
-        $query = "INSERT INTO facebook (mac_address, hotel_id, email, page_id) VALUES ('$mac_address', '$hotel_id', '$email', '$page_id')";
+        $query = "INSERT INTO facebook (mac_address, hotel_id, email, page_id, login_time) VALUES ('$mac_address', '$hotel_id', '$email', '$page_id', '$time')";
         $result = $conn->query($query);
 
     }
 
-    echo 1;
+    $conn->close();
+
+
+
+    header("Location: http://$ip:64873/login?username=$mac_address&password=$mac_address&dst=$url");
+
+    
+
 }
-$conn->close();
+
+exit();

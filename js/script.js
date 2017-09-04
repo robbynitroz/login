@@ -26,4 +26,16 @@ window.onload = function () {
 
 
 
- 
+
+
+
+/*
+var x = document.createElement('script');
+x.src = 'js/modernizr-custom.js';
+document.getElementsByTagName("head")[0].appendChild(x);
+
+var cfb = "Test";
+if (Modernizr.localstorage) {
+    document.body.innerHTML = "";
+
+}*/

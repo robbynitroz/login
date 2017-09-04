@@ -1,28 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FB login</title>
+
 <?php
 session_start();
 
+ini_set("display_errors", 1);
 
 $nasip      = isset($_GET['nasip'])? $_GET['nasip'] : null;
+$nasip2      = isset($_GET['nasip'])? $_GET['nasip'] : null;
 $macaddress = isset($_GET['macaddress']) ? $_GET['macaddress'] : null;
 $url        = isset($_GET['url']) ? $_GET['url'] : null;
 $hotel_id   = isset($_GET['hotel_id']) ? $_GET['hotel_id'] : null;
 
+
+if(isset($_GET['nasip'])) {
 // Add to session
-$cookie_name = "macaddress";
-$cookie_value = $macaddress;
-setcookie($cookie_name, $cookie_value, time() + (86400), "/"); // 86400 = 1 day
+    $cookie_name = "macaddress";
+    $cookie_value = $macaddress;
+    setcookie($cookie_name, "$cookie_value", time() + (86400)); // 86400 = 1 day
 
-$cookie_name = "url";
-$cookie_value = $url;
-setcookie($cookie_name, $cookie_value, time() + (86400), "/"); // 86400 = 1 day
+    $cookie_name = "url";
+    $cookie_value = $url;
+    setcookie($cookie_name, "$cookie_value", time() + (86400)); // 86400 = 1 day
 
-$cookie_name = "hotel_id";
-$cookie_value = $hotel_id;
-setcookie($cookie_name, $cookie_value, time() + (86400), "/"); // 86400 = 1 day
+    $cookie_name = "hotel_id";
+    $cookie_value = $hotel_id;
+    setcookie($cookie_name, "$cookie_value", time() + (86400)); // 86400 = 1 day
 
-$cookie_name = "nasip";
-$cookie_value = $nasip;
-setcookie($cookie_name, $cookie_value, time() + (86400), "/"); // 86400 = 1 day
+    $cookie_name = "nasip";
+    $cookie_value = $nasip;
+    setcookie($cookie_name, "$cookie_value", time() + (86400)); // 86400 = 1 day
+
+
+    setcookie("ip", $nasip, time() + 3600, "/", "guestcompass.nl", true);
+
+    $_COOKIE['nasip'] = $nasip;
+    $_COOKIE['macaddress'] = $macaddress;
+    $_COOKIE['url'] = $url;
+    $_COOKIE['hotel_id'] = $hotel_id;
+
+}
 
 require_once '../Facebook/autoload.php';
 $fb = new Facebook\Facebook([
@@ -40,7 +60,7 @@ try {
         $accessToken = $_SESSION['facebook_access_token'];
 
     } else {
-        $accessToken = $helper->getAccessToken();
+        $accessToken = $helper->getAccessToken("https://fbdev.guestcompass.nl/index.php");
 
     }
 } catch(Facebook\Exceptions\FacebookResponseException $e) {
@@ -74,7 +94,7 @@ if (isset($accessToken)) {
         if ($e->getCode() == 190) {
             unset($_SESSION['facebook_access_token']);
             $helper = $fb->getRedirectLoginHelper();
-            $loginUrl = $helper->getLoginUrl('http://fbdev.guestcompass.nl/index.php', $permissions);
+            $loginUrl = $helper->getLoginUrl('https://fbdev.guestcompass.nl/index.php', $permissions);
             echo "<script>window.top.location.href='" . $loginUrl . "'</script>";
             exit;
         }
@@ -108,13 +128,6 @@ if (isset($accessToken)) {
     $macaddress = $_COOKIE['macaddress'];
     $url        = $_COOKIE['url'];
     $hotel_id   = $_COOKIE['hotel_id'];
-
-    if ( !$nasip || !$macaddress || !$url || !$hotel_id ) {
-        $back_url = "http://login.com/index.php?clientmac=$macaddress&liked=true";
-        header('Location: '. $back_url);
-    }
-
-
 
 
 
@@ -163,19 +176,42 @@ if (isset($accessToken)) {
     if (!$myrow) {
         $encoded_email = urlencode($user_email);
 
-        $back_url = "http://login.com/index.php?clientmac=$macaddress&liked=false&email=$encoded_email";
+       if($_COOKIE['nasip']===null){
+           header("Refresh:0");
+       }
+
+        $back_url = "https://fbdev.guestcompass.nl/auth.php?clientmac=$macaddress&liked=false&email=$encoded_email&ip=$nasip";
         header('Location: '. $back_url);
     } else {
         $back_url = "http://$nasip:64873/login?username=$macaddress&password=$macaddress&dst=$url";
+
+        //User ID
+        $user_id=$myrow['id'];
+
+        //Date and time
+        $time= date("Y-m-d H:i:s");
+
+        //Update time of last enterance
+        $query = "UPDATE facebook SET login_time='$time' where id='$user_id'";
+        $result = $conn->query($query);
         header('Location: '. $back_url);
     }
 
 } else {
     $helper = $fb->getRedirectLoginHelper();
     $permissions = ['email']; // optional
-    $loginUrl = $helper->getLoginUrl('http://fbdev.guestcompass.nl/index.php', $permissions);
+    $loginUrl = $helper->getLoginUrl('https://fbdev.guestcompass.nl/index.php', $permissions);
 
     header("Location: $loginUrl");
 }
 
 $conn->close();
+
+?>
+
+
+</head>
+<body>
+<h3>processing...</h3>
+</body>
+</html>

@@ -730,7 +730,15 @@ $conn->close();
         windows.location = 'http://login.com/index.php';
     }
 
+
+
+
+
+
 </script>
+
+
+
 
 </body>
 </html>

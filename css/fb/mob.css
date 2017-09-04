@@ -85,7 +85,7 @@ h1 {
 }
 .contact-wthree input[type="text"],.contact-wthree input[type="email"],.contact-wthree input[type="password"] {
     width: 79%;
-    color: #fff;
+    color: #041c0c;
     background: white;
     outline: none;
     font-size: .9em;
@@ -320,7 +320,7 @@ h1 {
     padding: 1em .8em;
 }
 .contact-wthree input[type="text"], .contact-wthree input[type="email"], .contact-wthree input[type="password"] {
-    width:74%;
+    width:81%;
 }
 .contact-wthree h3 {
     font-size: 1em;
@@ -349,7 +349,7 @@ h1 {
     width: 90%;
 }
 .contact-wthree input[type="text"], .contact-wthree input[type="email"], .contact-wthree input[type="password"] {
-    width: 71%;
+    width: 82%;
 	font-size: .7em;
 }
 .agileits-row2 input[type="checkbox"]+label { 
@@ -451,7 +451,7 @@ div.social-wrap.c > .facebook {
     margin-left: 10%;
 }
 .email{
-    height:3.05em;
+    height:57px;
     border-radius:5px 0px 0px 5px;
     float: left;
     color: #949494;
@@ -518,4 +518,75 @@ div.social-wrap.c > .facebook {
 
 .email-special{
     margin-left: 1%;
+}
+
+#like_wrapper{
+
+    margin-left: 53%;
+    margin-top:10%;
+  
+
+}
+
+
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1023px){
+
+    /*#like_wrapper{
+
+
+        margin-top:10%;
+        transform: scale(5.5, 3.5);
+        -ms-transform: scale(5.5, 3.5);
+        -webkit-transform: scale(5.5, 3.5);
+        -o-transform: scale(5.5, 3.5);
+        -moz-transform: scale(5.5, 3.5);
+        display:block;
+        margin-right:30%;
+
+    }*/
+
+}
+@media only screen
+and (min-device-width : 769px)
+and (max-device-width : 1030px)
+    {
+
+
+    /*#like_wrapper{
+
+
+        margin-top:10%;
+        transform: scale(6.5, 4.5);
+        -ms-transform: scale(6.5, 4.5);
+        -webkit-transform: scale(6.5, 4.5);
+        -o-transform: scale(6.5, 4.5);
+        -moz-transform: scale(6.5, 4.5);
+        display:block;
+        margin-right:34%;
+
+    }*/
+
+
+}
+
+.terms-text{
+
+    display: none;
+    margin-top: 10%;
+
+
+}
+
+.close-button{
+
+    width: 60px;
+    height: 60px;
+    background: url("../../images/close_button.png") center no-repeat;
+    background-size: cover;
+    border-radius: 25% 25%;
+    margin: 0 auto;
+
+
 }

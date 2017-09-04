@@ -1,70 +1,78 @@
+<?php
+
+if(isset($_GET['liked'])){
+
+    $_GET['liked']=$_GET['liked'];
+
+}
+else{
+
+    $_GET['liked']=false;
+
+
+}
+
+
+
+    $data=['url'=>$url, 'email'=> $user_fb_email, 'mac'=>$macaddress,	 'hotelid'=>$hotel_id,  'fb-id'=>$fb_page_id, 'ip'=>$nasip];
+
+    $data=json_encode($data);
+
+
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
 	<title><?=$hotel_name?></title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="keywords" content="Client Signup Form template Responsive, Login form web template,Flat Pricing tables,Flat Drop downs  Sign up Web Templates, Flat Web Templates, Login sign up Responsive web template, SmartPhone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+	<meta name="keywords" content="Sign up with WiFi4Free" />
 	<link href="/css/fb/mob.css" rel="stylesheet" type="text/css" media="all" />
 
-	<script src="../js/jquery.min.js"></script>
-	<script src="../js/script.js"></script>
+    <script type="application/javascript"> var nervers= "<?php echo urlencode($data); ?>"  </script>
+	<script type="application/javascript" src="../js/jquery.min.js"></script>
+	<script type="application/javascript" src="../js/script.js"></script>
 
-	<script>
-		(function(d, s, id) {
-			var js, fjs = d.getElementsByTagName(s)[0];
-			if (d.getElementById(id)) return;
-			js = d.createElement(s); js.id = id;
-			js.src = '//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=696113500523537';
-			fjs.parentNode.insertBefore(js, fjs);
-		}(document, 'script', 'facebook-jssdk'));
+    <script type="application/x-javascript">
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = '//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=1519471891398547';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
 
-		$(document).ready(function() {
+        $(document).ready(function() {
 
-			$.ajaxSetup({ cache: true });
-			$.getScript('//connect.facebook.net/en_US/sdk.js', function(){
-				FB.init({
-					appId: '696113500523537',
-					status: true, // check login status
-					oauth: true,
-					version: 'v2.8' // or v2.1, v2.2, v2.3, ...
-				});
-				$('#loginbutton,#feedbutton').removeAttr('disabled');
+            $.ajaxSetup({ cache: true });
+            $.getScript('//connect.facebook.net/en_US/sdk.js', function(){
+                FB.init({
+                    appId: '1519471891398547',
+                    status: true, // check login status
+                    oauth: true,
+                    version: 'v2.8' // or v2.1, v2.2, v2.3, ...
+                });
+                $('#loginbutton,#feedbutton').removeAttr('disabled');
 
-				FB.Event.subscribe('edge.create', function(response) {
+                FB.Event.subscribe('edge.create', function(response) {
 
-					$.ajax({
-						type: 'POST',
-						url: 'http://login.com/like.php',
-						dataType: 'json',
-						data: {
-							url: '<?php echo $fb_url; ?>',
-							email: $('#user_email').val(),
-							mac_address: '<?php echo $macaddress; ?>',
-							hotel_id: <?php echo $hotel_id; ?>,
-							page_id: <?php echo $fb_page_id; ?>,
-						},
-						success: function(response){
-							if(response) {
-								window.location = 'http://<?php echo $nasip; ?>:64873/login?username=<?php echo $macaddress; ?>&password=<?php echo $macaddress; ?>&dst=<?php echo $url; ?>';
-							} else {
-								console.log(response);
-							}
-						}
-					});
 
-				});
-			});
 
-		});
-	</script>
+                    window.location = "https://fbdev.guestcompass.nl/like.php?data="+nervers;
+
+                });
+            });
+        });
+    </script>
 
 </head>
 <body>
 
 <!--FB SDK-->
 <!-- main -->
-<style>
+<style type="text/css">
 	body {
 		background-color: <?php echo $GLOBALS['bg_color']; ?>;
 	}
@@ -90,7 +98,11 @@
 </style>
 
 <div class="contact-wthree">
-	<a href="#"><p class="terms">terms & conditions ></p></a>
+    <h2 style="text-align: center" class="terms-text"><?php echo $GLOBALS['term_title']; ?></h2>
+    <h3 class="terms-text"><?php echo $GLOBALS['term_text']; ?></h3>
+    <div class="close-button terms-text" alt="close">  </div>
+    <div class="fokus">
+	<a href="#"><p class="terms"> <?php echo $GLOBALS['term_title']; ?> </p></a>
 
 	<!--			<div class="form-w3step1">-->
 	<!--				<div class="social-wrap c">-->
@@ -106,14 +118,14 @@
 	<!--			</div>-->
 	<!--		</form>-->
 
-	<form action="http://login.com/emailSave.php" method="post">
-		<h1 class="heading" style='color: <?php echo $GLOBALS['font_color_1'];?>;
-				font-size: calc(<?php echo $GLOBALS['font_size_1']; ?>px * 2.0833333) !important;' > <?php echo $GLOBALS['title']; ?></h1>
+        <form action="<?php if(!$_GET['liked']){ echo "http://login.com/emailSave.php"; } ?>" method="post">
+		<h1 class="heading" style='color: <?php echo $GLOBALS['font_color_1']; ?>;
+				font-size: calc(<?php echo $GLOBALS['font_size_1']; ?>px * 2.0833333) !important;' > <?php if(!$_GET['liked']){ echo $GLOBALS['title'];} else { echo $GLOBALS['fb_title'];  } ?></h1>
 		<?php
 		if ($_GET['liked'] == 'false'):
 			?>
 			<div class="form-w3step1">
-				<div id='like_wrapper' style='margin-left: 40%;
+				<div id='like_wrapper'  style='margin-left: 32%;
 								transform: scale(2.5, 1.7);
 								-ms-transform: scale(2.5, 1.7);
 								-webkit-transform: scale(2.5, 1.7);
@@ -121,7 +133,7 @@
 								-moz-transform: scale(2.5, 1.7);
 								'
 					 class="fb-like social-wrap c" data-href="<?php echo $fb_url; ?>"
-					 data-width="400"
+					 data-width="9000"
 					 data-layout="button"
 					 data-action="like"
 					 data-size="large"
@@ -132,11 +144,12 @@
 			<?php
 		else:
 			?>
+
 			<div class="form-w3step1" >
 				<div class="social-wrap c">
 					<button type='button' class="facebook">
 						<a style='color: <?php echo $GLOBALS['font_color_2'];?>;'
-						   href="http://fbdev.guestcompass.nl/index.php?macaddress=<?php echo $macaddress; ?>&nasip=<?php echo $nasip; ?>&hotel_id=<?php echo $hotel_id; ?>&url=<?php echo $url; ?>">
+						   href="https://fbdev.guestcompass.nl/index.php?macaddress=<?php echo $macaddress; ?>&nasip=<?php echo $nasip; ?>&hotel_id=<?php echo $hotel_id; ?>&url=<?php echo $url; ?>">
 							Connect using Facebook
 						</a>
 					</button>
@@ -146,7 +159,14 @@
 		endif;
 		?>
 
-		<input type="hidden" id="user_email" value="<?php echo urldecode($_GET['email']); ?>">
+       <?php if (!$_GET['liked']):
+        ?>
+
+		<input type="hidden" id="user_email" value="<?php
+
+				if (isset($_GET['email'])){ echo urldecode($_GET['email']);}
+
+				?>">
 
 		<input type="hidden" name="hotel_id" value="<?php echo $hotel_id; ?>">
 		<input type="hidden" name="template_id" value="<?php echo $template_id; ?>">
@@ -159,6 +179,11 @@
 			<input type="email" class="email agileits-btm email-special" name="Email" placeholder="<?php echo $GLOBALS['email_title']; ?>">
 			<button class="butt"> > </button>
 		</div>
+
+
+        <?php
+        endif;
+        ?>
 
 		<div class="form-w3step1 logo-image">
 			<img src="images/<?php echo $GLOBALS['image']; ?>">
@@ -178,4 +203,21 @@
 <!-- //main -->
 
 </body>
+<script type="application/javascript">
+
+    $(".terms").on("click", function(){
+        $(".fokus").hide();
+        $(".terms-text").show();
+        return false;
+    });
+
+    $(".close-button").on("click", function(){
+        $(".fokus").show();
+        $(".terms-text").hide();
+        return false;
+    });
+
+
+</script>
+
 </html>

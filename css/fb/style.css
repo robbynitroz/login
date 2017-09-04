@@ -83,8 +83,8 @@ h1 {
     font-family: 'Old Standard TT', serif;
 }
 .contact-wthree input[type="text"],.contact-wthree input[type="email"],.contact-wthree input[type="password"] {
-    width: 58%;
-    color: #fff;
+    width: 65%;
+    color: #041c0c;
     background: white;
     outline: none;
     font-size: .9em;
@@ -418,7 +418,7 @@ div.social-wrap.c > .facebook {
     margin-left: 10%;
 }
 .email{
-    height:2.05em;
+    height:3.35em;
     border-radius:5px 0px 0px 5px;
     float: left;
     color: #949494;
@@ -452,5 +452,24 @@ div.social-wrap.c > .facebook {
 .terms{
     color: #666565;
     text-align: end;
+
+}
+
+.terms-text{
+
+    display: none;
+
+
+}
+
+.close-button{
+
+    width: 60px;
+    height: 60px;
+    background: url("../../images/close_button.png") center no-repeat;
+    background-size: cover;
+    border-radius: 25% 25%;
+    margin: 0 auto;
+    
 
 }
