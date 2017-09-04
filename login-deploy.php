@@ -65,6 +65,7 @@ $commands = array(
 	'sudo git stash',
 	'sudo git pull',
 	//This is right way
+
 	'sudo git stash pop',
 	'sudo git pull',
 	'sudo git status',
