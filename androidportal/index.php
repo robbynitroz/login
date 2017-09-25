@@ -11,6 +11,6 @@
 
 
 http_response_code(404);
-header("HTTP/1.1 404 No Content")
+/*header("HTTP/1.1 404 No Content")*/
 
 ?>
