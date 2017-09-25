@@ -965,6 +965,9 @@ if ((strpos($userAgent, 'iphone') || strpos($userAgent, 'ipad')) &&
 
     if (!Modernizr.localstorage) {
         var newloc = window.location.href+'&cna=true';
+
+        window.location = newloc;
+
         document.write('<meta http-equiv="refresh" content="0; url='+ newloc +'" />');
 
     }
