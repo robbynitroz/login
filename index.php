@@ -954,7 +954,7 @@ if ((strpos($userAgent, 'iphone') || strpos($userAgent, 'ipad')) &&
 
 }*/
 
-if(!isset($_GET['cna'])){
+
 
 ?>
 
@@ -971,7 +971,7 @@ if(!isset($_GET['cna'])){
 </script>
 
 <?php
-}
+
 
 
 //Redirect to welcome php to change mobile popup to real br.
