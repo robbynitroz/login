@@ -943,7 +943,7 @@ $detect = new Mobile_Detect;
 
 $userAgent = strtolower($_SERVER['HTTP_USER_AGENT']);
 
-if ((strpos($userAgent, 'iphone') || strpos($userAgent, 'ipad')) &&
+/*if ((strpos($userAgent, 'iphone') || strpos($userAgent, 'ipad')) &&
     (strpos($userAgent, 'mozilla/') !== false) &&
     (strpos($userAgent, 'applewebkit/') !== false) &&
     (strpos($userAgent, 'mobile/') !== false) &&
@@ -952,13 +952,13 @@ if ((strpos($userAgent, 'iphone') || strpos($userAgent, 'ipad')) &&
 
     $cna= true;
 
-}
+}*/
 
 if(!isset($_GET['cna'])){
 
 ?>
 
-<script type="application/javascript"src="js/modernizr-custom.js" >
+<!--<script type="application/javascript"src="js/modernizr-custom.js" >
 </script>
 
 <script>
@@ -970,7 +970,7 @@ if(!isset($_GET['cna'])){
         document.write('<meta http-equiv="refresh" content="0; url='+ newloc +'" />');
 
     }
-</script>
+</script>-->
 
 <?php
 }
