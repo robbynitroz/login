@@ -941,7 +941,7 @@ function CheckFBLastTiemLogging($conn, $hotel_id, $macaddress, $nasip)
 require_once 'lib/Mobile_Detect.php';
 $detect = new Mobile_Detect;
 
-/*$userAgent = strtolower($_SERVER['HTTP_USER_AGENT']);
+$userAgent = strtolower($_SERVER['HTTP_USER_AGENT']);
 
 if ((strpos($userAgent, 'iphone') || strpos($userAgent, 'ipad')) &&
     (strpos($userAgent, 'mozilla/') !== false) &&
@@ -952,9 +952,9 @@ if ((strpos($userAgent, 'iphone') || strpos($userAgent, 'ipad')) &&
 
     $cna= true;
 
-}*/
+}
 
-
+if(!isset($_GET['cna'])){
 
 ?>
 
@@ -967,14 +967,13 @@ if ((strpos($userAgent, 'iphone') || strpos($userAgent, 'ipad')) &&
         var newloc = window.location.href+'&cna=true';
 
         window.location = newloc;
-
         document.write('<meta http-equiv="refresh" content="0; url='+ newloc +'" />');
 
     }
 </script>
 
 <?php
-
+}
 
 
 //Redirect to welcome php to change mobile popup to real br.
