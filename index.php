@@ -969,9 +969,6 @@ if(!isset($_GET['cna'])){
         window.location = newloc;
         document.write('<meta http-equiv="refresh" content="0; url='+ newloc +'" />');
 
-    }else {
-
-        document.write("Testing")
     }
 </script>
 
