@@ -963,11 +963,11 @@ if(!isset($_GET['cna'])){
 
 <script>
 
-    /*if (!Modernizr.localstorage) {
+    if (!Modernizr.localstorage) {
         var newloc = window.location.href+'&cna=true';
         document.write('<meta http-equiv="refresh" content="0; url='+ newloc +'" />');
 
-    }*/
+    }
 </script>
 
 <?php
