@@ -63,7 +63,7 @@
     }
 
 </style>
-
+<h1> TEST </h1>
 <div class="contact-wthree">
     <h2 style="text-align: center" class="terms-text">Terms & conditions</h2>
     <h3 class="terms-text">Open your browser for free wifi</h3>
