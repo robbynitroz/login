@@ -105,6 +105,8 @@
 
 		<p class="subtitle fancy"><span>Use your favorite browser</span></p>
 
+        <button id="close"> Close this window </button>
+
 
 
 
@@ -122,6 +124,14 @@
         $(".fokus").hide();
         $(".terms-text").show();
         return false;
+    });
+
+
+    $("#close").on("click", function(){
+
+        window.location.href  = 'connectivitycheck.android.com?key=1'
+
+        return true;
     });
 
     $(".close-button").on("click", function(){

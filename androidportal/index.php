@@ -1,9 +1,15 @@
 <?php
 
 
-http_response_code(204);
+if(isset($_GET['key'])) {
 
-echo "Hello";
+    http_response_code(204);
+}else{
+    http_response_code(404);
+
+}
+
+
 
 
 ?>
