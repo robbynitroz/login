@@ -4,7 +4,7 @@
 if($_GET['give_access']){
 
 
-        setcookie("give_access", "Yes", time() + (8640 * 3), "/"); // 86400 = 1 day
+        setcookie("give_access", "Yes", time() + (60 * 5), "/"); // 86400 = 1 day
         http_response_code(204);
 
 }else{
