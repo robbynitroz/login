@@ -1,6 +1,23 @@
 <?php
 
 
+
+session_start();
+
+if(isset($_SESSION['views'])){
+    $_SESSION['views'] = $_SESSION['views']+ 1;
+    http_response_code(204);
+
+}else{
+    $_SESSION['views'] = 1;
+
+    require 'welcome.php';
+}
+
+
+
+/*
+
 if ($_GET['give_access']) {
 
 
@@ -17,11 +34,10 @@ if ($_GET['give_access']) {
 
 if ($_COOKIE["give_access"]) {
     http_response_code(204);
-}
+}*/
 
 
-//http_response_code(204);
-/*header("HTTP/1.1 404 No Content")*/
+
 
 
 ?>
