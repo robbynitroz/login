@@ -6,7 +6,9 @@ session_start();
 
 if(isset($_SESSION['views'])){
     $_SESSION['views'] = $_SESSION['views']+ 1;
-    http_response_code(204);
+    echo "<h1>". $_SESSION['views'] ." </h1>";
+
+    //http_response_code(204);
 
 }else{
     $_SESSION['views'] = 1;
