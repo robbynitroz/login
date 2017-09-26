@@ -30,7 +30,9 @@ $address = 'http://'.$_SERVER['SERVER_NAME'];
             <div class="inner cover">
                 <h1 class="cover-heading">  Close this window and open your favorite browser </h1>
                 <p class="lead"> Enjoy unlimited internet by signing up for internet at <span style="color: red">login.com</span></p>
-
+                <p class="lead">
+                    <a href="#" onclick="close_window();return false;" class="btn btn-lg btn-secondary"> Close  :)</a>
+                </p>
             </div>
 
 

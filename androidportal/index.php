@@ -4,18 +4,18 @@
 
 session_start();
 
-if(isset($_SESSION['caa5'])){
-    if($_SESSION['caa4']>=5){
+if(isset($_SESSION['caa6'])){
+    if($_SESSION['caa6']>=5){
         http_response_code(204);
 
     }
 }
 
-if(isset($_SESSION['caa5'])){
-    $_SESSION['caa5'] = $_SESSION['caa']+ 1;
+if(isset($_SESSION['caa6'])){
+    $_SESSION['caa6'] = $_SESSION['caa6']+ 1;
 
 }else{
-    $_SESSION['caa5'] = 1;
+    $_SESSION['caa6'] = 1;
     require 'welcome.php';
 }
 
