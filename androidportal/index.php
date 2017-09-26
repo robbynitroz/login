@@ -1,10 +1,10 @@
 <?php
 
 
-if(!isset($_COOKIE["user"])) {
-    $cookie_name = "user";
+if(!isset($_COOKIE["users"])) {
+    $cookie_name = "users";
     $cookie_value = "John Doe";
-    setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1 day
+    setcookie($cookie_name, $cookie_value, time() + (8640 * 3), "/"); // 86400 = 1 day
 
     header('location: http://login.com');
 
