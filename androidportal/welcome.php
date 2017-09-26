@@ -31,7 +31,7 @@ $address = 'http://'.$_SERVER['SERVER_NAME'];
                 <h1 class="cover-heading">  Close this window and open your favorite browser </h1>
                 <p class="lead"> Enjoy unlimited internet by signing up for internet at <span style="color: red">login.com</span></p>
                 <p class="lead">
-                    <a href="https://google.com" class="btn btn-lg btn-secondary"> Close  :)</a>
+                    <a href="<?=$address?>/?yes" class="btn btn-lg btn-secondary"> Close  :)</a>
                 </p>
             </div>
 
