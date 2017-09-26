@@ -8,8 +8,6 @@ if(isset($_SESSION['caa'])){
     if($_SESSION['caa']>=10){
         http_response_code(204);
 
-        exit();
-        die();
     }
 }
 
