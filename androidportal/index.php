@@ -7,6 +7,8 @@ if($_GET['give_access'] or $_COOKIE["give_access"]){
         setcookie("give_access", "Yes", time() + (60 * 5), "/"); // 86400 = 1 day
         http_response_code(204);
 
+        header('location:http://login.com');
+
 }else{
 
     $address = 'http://'.$_SERVER['SERVER_NAME'].'/welcome.php';
