@@ -9,6 +9,7 @@ if(isset($_SESSION['views'])){
         http_response_code(204);
 
         exit();
+        die();
     }
 }
 
@@ -17,8 +18,6 @@ if(isset($_SESSION['views'])){
 
 }else{
     $_SESSION['views'] = 1;
-
-    echo "<h1>". $_SESSION['views'] ." </h1>";
     require 'welcome.php';
 }
 
