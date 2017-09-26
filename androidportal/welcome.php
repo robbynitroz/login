@@ -28,11 +28,9 @@ $address = 'http://'.$_SERVER['SERVER_NAME'];
 
 
             <div class="inner cover">
-                <h1 class="cover-heading">  Close this window by pressing the button </h1>
-                <p class="lead">By clicking the button below you are granted unlimited internet :)</p>
-                <p class="lead">
-                    <a href="<?=$address?>/?give_access=yes" class="btn btn-lg btn-secondary"> Close  :)</a>
-                </p>
+                <h1 class="cover-heading">  Close this window and open your favorite browser </h1>
+                <p class="lead"> Enjoy unlimited internet by signing up for internet at <span style="color: red">login.com</span></p>
+
             </div>
 
 
