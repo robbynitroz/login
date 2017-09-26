@@ -1,15 +1,17 @@
 <?php
 
 
-if(!isset($_COOKIE["users"])) {
-    $cookie_name = "users";
-    $cookie_value = "John Doe";
-    setcookie($cookie_name, $cookie_value, time() + (8640 * 3), "/"); // 86400 = 1 day
+if($_GET['give_access']){
 
-    header('location: http://login.com');
+
+        setcookie("give_access", "Yes", time() + (8640 * 3), "/"); // 86400 = 1 day
+        http_response_code(204);
 
 }else{
-    http_response_code(204);
+
+    $address = 'http://'.$_SERVER['SERVER_NAME'].'/welcome.php';
+
+    header("location: $address ");
 }
 
 
