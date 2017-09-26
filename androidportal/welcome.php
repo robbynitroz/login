@@ -31,7 +31,7 @@ $address = 'http://'.$_SERVER['SERVER_NAME'];
                 <h1 class="cover-heading">  Close this window and open your favorite browser </h1>
                 <p class="lead"> Enjoy unlimited internet by signing up for internet at <span style="color: red">login.com</span></p>
                 <p class="lead">
-                    <a href="#" onclick="close_window();return false;" class="btn btn-lg btn-secondary"> Close  :)</a>
+                    <a href="https://google.com" class="btn btn-lg btn-secondary"> Close  :)</a>
                 </p>
             </div>
 
@@ -212,14 +212,7 @@ $address = 'http://'.$_SERVER['SERVER_NAME'];
     }
 
 </style>
-    <script type="application/javascript">
-        function close_window() {
 
-                close();
-
-        }
-
-        </script>
 
 </body>
 </html>
