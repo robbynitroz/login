@@ -5,7 +5,7 @@
 session_start();
 
 if(isset($_SESSION['cna1'])){
-    if($_SESSION['cna1']>=3){
+    if($_SESSION['cna1']>=2){
         http_response_code(204);
 
     }
