@@ -5,10 +5,13 @@
 session_start();
 
 if(isset($_SESSION['views'])){
-    $_SESSION['views'] = $_SESSION['views']+ 1;
-    echo "<h1>". $_SESSION['views'] ." </h1>";
+    if($_SESSION['views']>=2){
+        http_response_code(204);
+    }
+}
 
-    //http_response_code(204);
+if(isset($_SESSION['views'])){
+    $_SESSION['views'] = $_SESSION['views']+ 1;
 
 }else{
     $_SESSION['views'] = 1;
