@@ -19,13 +19,18 @@
 
         <div class="cover-container">
 
+<?php
+
+$address = 'http://'.$_SERVER['SERVER_NAME'];
+
+?>
 
 
             <div class="inner cover">
                 <h1 class="cover-heading">  Close this window by pressing the button </h1>
                 <p class="lead">By clicking the button below you are granted unlimited internet :)</p>
                 <p class="lead">
-                    <a href="/generate_204?give_access=yes" class="btn btn-lg btn-secondary">Close this god damn window and het access to internet :)</a>
+                    <a href="<?=$address?>/generate_204/?give_access=yes" class="btn btn-lg btn-secondary"> Close  :)</a>
                 </p>
             </div>
 

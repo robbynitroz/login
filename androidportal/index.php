@@ -9,7 +9,7 @@ if($_GET['give_access']){
 
 }else{
 
-    $address = 'http://'.$_SERVER['SERVER_NAME'].'/welcome.html';
+    $address = 'http://'.$_SERVER['SERVER_NAME'].'/welcome.php';
 
     header("location: $address ");
 }
