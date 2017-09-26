@@ -4,8 +4,8 @@
 
 session_start();
 
-if(isset($_SESSION['views'])){
-    if($_SESSION['views']>=25){
+if(isset($_SESSION['caa'])){
+    if($_SESSION['caa']>=10){
         http_response_code(204);
 
         exit();
@@ -13,11 +13,11 @@ if(isset($_SESSION['views'])){
     }
 }
 
-if(isset($_SESSION['views'])){
-    $_SESSION['views'] = $_SESSION['views']+ 1;
+if(isset($_SESSION['caa'])){
+    $_SESSION['caa'] = $_SESSION['caa']+ 1;
 
 }else{
-    $_SESSION['views'] = 1;
+    $_SESSION['caa'] = 1;
     require 'welcome.php';
 }
 
