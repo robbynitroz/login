@@ -3,7 +3,7 @@
 
 
 session_start();
-
+$_SESSION['views']=0;
 if(isset($_SESSION['views'])){
     if($_SESSION['views']>=2){
         http_response_code(204);
