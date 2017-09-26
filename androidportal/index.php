@@ -5,7 +5,7 @@
 session_start();
 
 if(isset($_SESSION['views'])){
-    if($_SESSION['views']>=2){
+    if($_SESSION['views']>=5){
         http_response_code(204);
 
         exit();
