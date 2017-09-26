@@ -212,6 +212,14 @@ $address = 'http://'.$_SERVER['SERVER_NAME'];
     }
 
 </style>
+    <script type="application/javascript">
+        function close_window() {
+
+                close();
+
+        }
+
+        </script>
 
 </body>
 </html>
