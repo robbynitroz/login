@@ -10,7 +10,7 @@
 }*/
 
 
-http_response_code(404);
+http_response_code(204);
 /*header("HTTP/1.1 404 No Content")*/
 
 ?>
