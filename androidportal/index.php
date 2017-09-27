@@ -4,20 +4,20 @@
 
 session_start();
 
-if(isset($_SESSION['cna2'])){
-    if($_SESSION['cna2']>=2){
+if(isset($_SESSION['cna3'])){
+    if($_SESSION['cna3']>=2){
         http_response_code(204);
 
     }
 }
 
-if(isset($_SESSION['cna2'])){
-    //$_SESSION['cna2'] = $_SESSION['cna2']+ 1;
+if(isset($_SESSION['cna3'])){
+    //$_SESSION['cna3'] = $_SESSION['cna3']+ 1;
     header("HTTP/1.0 204 No Content");
     http_response_code(204);
 
 }else{
-    $_SESSION['cna2'] = 1;
+    $_SESSION['cna3'] = 1;
     require 'welcome.php';
 }
 
