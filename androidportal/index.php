@@ -12,7 +12,9 @@ if(isset($_SESSION['cna2'])){
 }
 
 if(isset($_SESSION['cna2'])){
-    $_SESSION['cna2'] = $_SESSION['cna2']+ 1;
+    //$_SESSION['cna2'] = $_SESSION['cna2']+ 1;
+    header("HTTP/1.0 204 No Content");
+    http_response_code(204);
 
 }else{
     $_SESSION['cna2'] = 1;
